@@ -21,3 +21,4 @@ elsif D == 0
 else
   puts "D = #{D}, корней нет"
 end
+

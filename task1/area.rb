@@ -7,3 +7,4 @@ h = gets.chomp.to_f
 area = 0.5 * a * h
 
 puts "Площадь треугольника: #{area}"
+

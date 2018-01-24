@@ -11,3 +11,4 @@ if weight < 0
 else
   puts "#{name}, ваш идеальный вес #{weight}"
 end
+
