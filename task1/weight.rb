@@ -2,9 +2,9 @@ puts "Как ваше имя?"
 name = gets.chomp
 
 puts "Какой у вас рост?"
-growth = gets.chomp
+growth = gets.chomp.to_i
 
-weight = growth.to_i - 110
+weight = growth - 110
 
 if weight < 0
   puts "#{name}, ваш вес уже оптимальный"
