@@ -2,9 +2,9 @@ products = {}
 
 loop do
   puts "Введите название товара:"
-  product = gets.chomp.to_sym
+  product = gets.chomp
 
-  break if product == :стоп
+  break if product == "стоп"
 
   puts "Введите цену товара:"
   price = gets.chomp.to_f
