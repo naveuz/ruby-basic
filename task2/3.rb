@@ -5,9 +5,7 @@ end
 array = []
 index = 0
 
-loop do
-  f = fib(index)
-  break if f > 100
+while (f = fib(index)) <= 100
   array << f
   index += 1
 end
