@@ -16,7 +16,7 @@ class Station
   end
 
   def trains_list_by_type(type)
-    trains.select { |train| train[:type] == type }
+    trains.count { |train| train.type == type }
   end
 
   def delete_train(train)
