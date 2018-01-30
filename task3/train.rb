@@ -1,5 +1,4 @@
 class Train
-
   attr_accessor :wagons_count, :speed, :route
   attr_reader :type
 
@@ -18,20 +17,12 @@ class Train
     self.speed = 0
   end
 
-  def current_speed
-    speed
-  end
-
-  def get_wagons_count
-    wagons_count
-  end
-
   def add_wagon
-    self.wagons_count = wagons_count + 1 if current_speed == 0
+    self.wagons_count = wagons_count + 1 if speed.zero?
   end
 
   def delete_wagon
-    self.wagons_count = wagons_count - 1 if current_speed == 0
+    self.wagons_count = wagons_count - 1 if speed.zero?
   end
 
   def set_route(route)
@@ -53,15 +44,14 @@ class Train
   end
 
   def current_station
-    route.get_stations[@route_index]
+    route.stations[@route_index]
   end
 
   def prev_station
-    route.get_stations[@route_index - 1]
+    route.stations[@route_index - 1]
   end
 
   def next_station
-    route.get_stations[@route_index + 1]
+    route.stations[@route_index + 1]
   end
-
 end
