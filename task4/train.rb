@@ -1,6 +1,6 @@
 class Train
   attr_accessor :speed, :route
-  attr_reader :type, :carriages
+  attr_reader :number, :type, :carriages
 
   def initialize(number)
     @number = number
@@ -16,8 +16,8 @@ class Train
     self.speed = 0
   end
 
-  def delete_carriage(carriage)
-    carriages.delete(carriage) if speed.zero?
+  def delete_carriage
+    carriages.delete_at(-1) if speed.zero?
   end
 
   def set_route(route)
