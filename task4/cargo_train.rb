@@ -1,12 +1,11 @@
 class CargoTrain < Train
 
-  def initialize(number)
-    super(number)
-    @type = :cargo
+  def type
+    'грузовой'
   end
 
-  def add_carriage(carriage)
-    carriages << carriage if speed.zero? && carriage.class == CargoCarriage
+  def is_right_type?(carriage)
+    carriage.is_a? CargoCarriage
   end
 
 end
