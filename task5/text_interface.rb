@@ -104,7 +104,7 @@ class TextInterface
   end
 
   def trains_list
-    trains.each { |train|  puts train.number }
+    trains.each_value { |train|  puts train.number }
   end
 
   def routes_list

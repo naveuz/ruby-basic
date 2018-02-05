@@ -4,7 +4,7 @@ class Train
   attr_accessor :speed, :route
   attr_reader :number, :carriages
 
-  @@trains = []
+  @@trains = {}
 
   class << self
     def all
@@ -12,8 +12,7 @@ class Train
     end
 
     def find(number)
-      idx = @@trains.index { |train| train.number == number }
-      @@trains[idx] unless idx.nil?
+      @@trains[number]
     end
   end
 
@@ -22,7 +21,7 @@ class Train
     @manufacturer = manufacturer
     @carriages = []
     @speed = 0
-    @@trains << self
+    @@trains[@number] = self
   end
 
   def move(speed)
