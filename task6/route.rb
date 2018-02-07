@@ -23,7 +23,9 @@ class Route
 
   def validate!
     raise 'Начальная станция не может быть пустой!' if station_start.nil?
+    raise 'Данное значение не является станцией!' unless station_start.is_a? Station
     raise 'Конечная станция не может быть пустой!' if station_end.nil?
+    raise 'Данное значение не является станцией!' unless station_end.is_a? Station
     true
   end
 end
