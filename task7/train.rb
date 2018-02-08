@@ -28,7 +28,7 @@ class Train
     @@trains[@number] = self
   end
 
-  def block_carriages(&block)
+  def each_carriage
     carriages.each.with_index(1) { |carriage, index| yield(carriage, index) }
   end
 

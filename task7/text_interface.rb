@@ -112,17 +112,17 @@ class TextInterface
     stations_list
     puts 'Укажите номер станции:'
     station = stations[gets.to_i - 1]
-    station.block_trains { |train| puts "#{train.number} | #{train.type} | #{train.carriages.count}" }
+    station.each_train { |train| puts "#{train.number} | #{train.type} | #{train.carriages.count}" }
   end
 
   def carriages_train
     train = select_train
     if train.is_a? PassengerTrain
-      train.block_carriages do |carriage, index|
+      train.each_carriage do |carriage, index|
         puts "#{index} | Свободно мест: #{carriage.free_capacity} | Занято мест: #{carriage.occupied}"
       end
     elsif train.is_a? CargoTrain
-      train.block_carriages do |carriage, index|
+      train.each_carriage do |carriage, index|
         puts "#{index} | Свободный объем: #{carriage.free_capacity} м3 | Занятый объем: #{carriage.occupied} м3"
       end
     end
